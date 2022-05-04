@@ -1,5 +1,5 @@
 {% set name = "av2" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/argoai/argoverse2-api/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 853aca3c9dd561f189b6c808f3d73ea816fc5e2cce7d98fc3c832dd181c4ef45
+  sha256: 756cad4bdcdd6f7d956df92101378dabe22f4eceb6add74fc61cdf81946af201
 
 build:
   noarch: python
@@ -47,12 +47,12 @@ test:
 
 about:
   home: https://github.com/argoai/argoverse2-api
-  summary: 'The official API of the Argoverse 2 dataset.'
+  summary: The official API of the Argoverse 2 dataset.
   description: |
     The official API of the Argoverse 2 dataset.
   license: MIT
   license_family: MIT
-  license_file: 
+  license_file:
     - LICENSE
     - NOTICE
   doc_url: https://github.com/argoai/argoverse2-api
