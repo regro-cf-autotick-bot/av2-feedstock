@@ -1,7 +1,7 @@
 About av2
 =========
 
-Home: https://github.com/argoai/argoverse2-api
+Home: https://github.com/argoai/av2-api
 
 Package license: MIT
 
@@ -9,9 +9,9 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/av2-feedstock/b
 
 Summary: The official API of the Argoverse 2 dataset.
 
-Development: https://github.com/argoai/argoverse2-api
+Development: https://github.com/argoai/av2-api
 
-Documentation: https://github.com/argoai/argoverse2-api
+Documentation: https://github.com/argoai/av2-api
 
 The official API of the Argoverse 2 dataset.
 
