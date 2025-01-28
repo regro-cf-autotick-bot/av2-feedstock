@@ -10,13 +10,17 @@ source:
   sha256: bb88b8d4b2e6c4a3e0eeb43a4c7868eb64193da1d61863452f73b5e67a521fa1
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 1
 
 requirements:
-  host:
+  build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('rust') }}
+    - maturin
+
+  host:
     - maturin
     - pip
     - python {{ python_min }}
