@@ -26,18 +26,27 @@ requirements:
     - av
     - click
     - joblib
+    - kornia
     - matplotlib-base
+    - maturin
     - nox
     - numba
     - numpy >=1.21.5
+    - openblas
     - opencv
+    - openssl
     - pandas
-    - python >={{ python_min }}
     - pip
+    - polars
     - pyarrow
     - pyproj
+    - python >={{ python_min }}
     - rich
+    - rust
     - scipy
+    - pytorch
+    - tqdm
+    - universal_pathlib
 
 test:
   imports:
