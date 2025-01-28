@@ -16,6 +16,7 @@ build:
 
 requirements:
   host:
+    - {{ compiler('rust') }}
     - maturin
     - pip
     - python {{ python_min }}
