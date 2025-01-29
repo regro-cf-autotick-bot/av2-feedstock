@@ -1,5 +1,5 @@
 {% set name = "av2" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,25 @@ package:
 
 source:
   url: https://github.com/argoai/argoverse2-api/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b6aa3b2fcb702ab1d6a0ac535466d20d0a754ee46b8ab95a4d97337511e45358
+  sha256: bb88b8d4b2e6c4a3e0eeb43a4c7868eb64193da1d61863452f73b5e67a521fa1
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 1
 
 requirements:
+  build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - {{ compiler('c') }}
+    - {{ stdlib("c") }}
+    - {{ compiler('rust') }}
+    - maturin
+
   host:
+    - maturin
     - pip
-    - python {{ python_min }}
+    - python
     - setuptools >=42
     - wheel
 
@@ -25,18 +33,27 @@ requirements:
     - av
     - click
     - joblib
+    - kornia
     - matplotlib-base
+    - maturin
     - nox
     - numba
     - numpy >=1.21.5
+    - openblas
     - opencv
+    - openssl
     - pandas
-    - python >={{ python_min }}
     - pip
+    - polars
     - pyarrow
     - pyproj
+    - python
     - rich
+    - rust
     - scipy
+    - pytorch
+    - tqdm
+    - universal_pathlib
 
 test:
   imports:
